@@ -1,0 +1,317 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "bridgeAccessAddr",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint8",
+				"name": "resourceChainId",
+				"type": "uint8"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint8",
+				"name": "destinationChainId",
+				"type": "uint8"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint64",
+				"name": "depositNonce",
+				"type": "uint64"
+			},
+			{
+				"indexed": false,
+				"internalType": "enum SignatureCollector.TransferType",
+				"name": "typ",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"internalType": "enum SignatureCollector.ProposalStatus",
+				"name": "status",
+				"type": "uint8"
+			}
+		],
+		"name": "SignProposalEvent",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint72",
+				"name": "",
+				"type": "uint72"
+			}
+		],
+		"name": "_destinationStartNonce",
+		"outputs": [
+			{
+				"internalType": "uint64",
+				"name": "",
+				"type": "uint64"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "bridgeAccess",
+		"outputs": [
+			{
+				"internalType": "contract IBridgeAccess",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "bridgeAccessAddr",
+				"type": "address"
+			}
+		],
+		"name": "changeBridgeAccess",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "originChainId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "destinationId",
+				"type": "uint8"
+			}
+		],
+		"name": "coId",
+		"outputs": [
+			{
+				"internalType": "uint72",
+				"name": "",
+				"type": "uint72"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint72",
+				"name": "",
+				"type": "uint72"
+			},
+			{
+				"internalType": "uint64",
+				"name": "",
+				"type": "uint64"
+			}
+		],
+		"name": "destinationProposals",
+		"outputs": [
+			{
+				"internalType": "enum SignatureCollector.ProposalStatus",
+				"name": "status",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "srcId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "destId",
+				"type": "uint8"
+			}
+		],
+		"name": "getDestinationStartNoncee",
+		"outputs": [
+			{
+				"internalType": "uint64",
+				"name": "",
+				"type": "uint64"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "srcId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "destId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint64",
+				"name": "depositNonce",
+				"type": "uint64"
+			}
+		],
+		"name": "getProposalSignatures",
+		"outputs": [
+			{
+				"internalType": "enum SignatureCollector.ProposalStatus",
+				"name": "status",
+				"type": "uint8"
+			},
+			{
+				"internalType": "bytes[]",
+				"name": "signatures",
+				"type": "bytes[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "srcId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "destId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint64",
+				"name": "depositNonce",
+				"type": "uint64"
+			},
+			{
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "hasSignedProposal",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "srcId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "destId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint64",
+				"name": "startNonce",
+				"type": "uint64"
+			}
+		],
+		"name": "setDestinationStartNonce",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "srcId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "destId",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint64",
+				"name": "depositNonce",
+				"type": "uint64"
+			},
+			{
+				"internalType": "enum SignatureCollector.TransferType",
+				"name": "typ",
+				"type": "uint8"
+			},
+			{
+				"internalType": "bytes",
+				"name": "signature",
+				"type": "bytes"
+			}
+		],
+		"name": "signProposal",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
